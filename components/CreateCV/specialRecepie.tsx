@@ -1,4 +1,4 @@
-import { SpecialRecepieObj } from "@/pages/api/open-ai/food";
+import { SpecialRecepieObj } from "@/pages/api/open-ai/cv";
 import { showBuyMore } from "@/redux/features/common";
 import { useAppDispatch } from "@/redux/hooks";
 import {

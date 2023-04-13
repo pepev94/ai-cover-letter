@@ -30,6 +30,7 @@ export async function OpenAIStream(payload: any, url: string) {
           }
           try {
             const json = JSON.parse(data);
+            console.log(json);
             const text = json.choices[0].delta.content;
             if (counter < 2 && (text?.match(/\n/) || []).length) {
               return;

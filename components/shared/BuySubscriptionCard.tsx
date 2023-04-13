@@ -9,7 +9,7 @@ import { FormattedMessage } from "react-intl";
 import InfoModalCard from "./InfoModalCard";
 import getStripe from "@/utils/get-stripe";
 import { useSession } from "next-auth/react";
-import LoginCta from "../CreateRecipie/loginCta";
+import LoginCta from "../CreateCV/loginCta";
 import { useState } from "react";
 import { Box } from "@mui/system";
 import CheckIcon from "@mui/icons-material/Check";

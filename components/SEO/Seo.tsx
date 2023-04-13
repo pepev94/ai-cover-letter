@@ -5,9 +5,9 @@ const DEFAULT_OG_IMAGE =
   "https://aifoodie.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FlogoRojo.6071538e.png&w=100&q=75";
 
 export default function Seo({
-  title = "Create Recipies powered by AI",
-  description = "Create any recipie powered by AI",
-  siteName = "AI Chef",
+  title = "Create Personalized CV powered by AI",
+  description = "Get hired faster",
+  siteName = "AI CV",
   canonical = DOMAIN,
   ogImage = DEFAULT_OG_IMAGE,
   ogType = "website",

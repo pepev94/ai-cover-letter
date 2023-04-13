@@ -11,7 +11,7 @@ import Image from "next/image";
 import logo from "assets/logo2Blanco.png";
 import { useQuery } from "@tanstack/react-query";
 import { fetchUser } from "@/utils/fetchers";
-import { Menu, MenuItem } from "@mui/material";
+import { Menu, MenuItem, Typography } from "@mui/material";
 import LanguageMenu from "../LanguageMenu";
 
 const AppBarWithTheme = styled(AppBar)(({ theme }) => ({
@@ -65,7 +65,8 @@ export default function NavBar({
                 handleClick(e as unknown as React.MouseEvent<HTMLButtonElement>)
               }
             >
-              <Image src={logo} alt="Logo" width={30} />
+              <Typography sx={{ fontWeight: 700 }}>Cover Letter AI</Typography>
+              {/* <Image src={logo} alt="Logo" width={30} /> */}
             </Box>
             <Box>
               <Menu
@@ -86,15 +87,6 @@ export default function NavBar({
                   </Link>
                 </MenuItem>
 
-                <MenuItem onClick={handleClose}>
-                  <Link
-                    style={{ textDecoration: "none", color: "black" }}
-                    href="/cocktails"
-                  >
-                    <FormattedMessage id="Cocktails" />
-                  </Link>
-                </MenuItem>
-
                 {session?.status === "authenticated" && (
                   <>
                     <MenuItem
@@ -111,14 +103,6 @@ export default function NavBar({
                 {session?.status === "authenticated" &&
                   userData.data[0]?.subscriptionId !== null && (
                     <>
-                      <MenuItem onClick={handleClose}>
-                        <Link
-                          style={{ textDecoration: "none", color: "black" }}
-                          href="/recepies"
-                        >
-                          <FormattedMessage id="yourRecepiesPage" />
-                        </Link>
-                      </MenuItem>
                       <MenuItem
                         onClick={() => {
                           cancelSubscription();

@@ -9,14 +9,13 @@ import NavBar from "@/components/navBar";
 import { ThemeProvider } from "@emotion/react";
 import { MuiTheme } from "@/utils/theme";
 import { CssBaseline } from "@mui/material";
-import Script from "next/script";
 import { SessionProvider } from "next-auth/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 import Contact from "@/components/Contact";
-import ButtonsRecepieCocktailNavigation from "@/components/ButtonsRecepieCocktailNaviation";
 import store from "@/redux/store";
 import BuySubscription from "@/components/shared/BuyTokensCta";
+import Script from "next/script";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const { locale } = useRouter();
@@ -48,7 +47,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         src="https://www.googletagmanager.com/gtag/js?id=G-9RQ9TBFXW6"
         strategy="afterInteractive"
       />
-      <Script id="hot-jar" strategy="afterInteractive">
+      {/* <Script id="hot-jar" strategy="afterInteractive">
         {`
            (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -59,16 +58,16 @@ const App = ({ Component, pageProps }: AppProps) => {
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
         `}
-      </Script>
-      <Script id="google-analytics" strategy="afterInteractive">
+      </Script> */}
+      {/* <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-9RQ9TBFXW6');
         `}
-      </Script>
-      <Script id="twak.to" strategy="afterInteractive">
+      </Script> */}
+      {/* <Script id="twak.to" strategy="afterInteractive">
         {`
           var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
           (function(){
@@ -80,7 +79,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           s0.parentNode.insertBefore(s1,s0);
           })();
         `}
-      </Script>
+      </Script> */}
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
           <SessionProvider session={pageProps.session}>
@@ -93,7 +92,6 @@ const App = ({ Component, pageProps }: AppProps) => {
                 <CssBaseline />
                 <BuySubscription />
                 <NavBar setSelectedLanguage={setSelectedLanguage} />
-                <ButtonsRecepieCocktailNavigation />
                 <Component {...pageProps} />
                 <Contact />
               </ThemeProvider>

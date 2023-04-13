@@ -13,15 +13,7 @@ const LoginCta = ({ callbackUrl }: Props) => {
       <Typography color="white" sx={{ mt: 2 }} variant="h4" component="h1">
         <FormattedMessage id="title" defaultMessage="Recipies AI" />
       </Typography>
-      {/* <Typography sx={{ mt: 2 }} color="white" variant="h5" component="h2">
-        <FormattedMessage
-          id="subtitle"
-          defaultMessage="Create you own recipies powered by AI"
-        />
-      </Typography> */}
-      <Typography sx={{ mt: 3 }} color="white" variant="h5" component="h2">
-        <FormattedMessage id="signInCTA" />
-      </Typography>
+
       <Button
         fullWidth
         sx={{ mt: 2, color: "black", backgroundColor: "white" }}
@@ -30,7 +22,7 @@ const LoginCta = ({ callbackUrl }: Props) => {
           signIn(undefined, { callbackUrl: callbackUrl ? callbackUrl : "/" })
         }
       >
-        <FormattedMessage id="signIn" />
+        <FormattedMessage id="signInCTA" />
       </Button>
     </InfoModalCard>
   );

@@ -1,12 +1,11 @@
-import ButtonsRecepieCocktailNavigation from "@/components/ButtonsRecepieCocktailNaviation";
-import CreateRecipie from "@/components/CreateRecipie";
+import CreateCV from "@/components/CreateCV";
 import Seo from "@/components/SEO/Seo";
 
 export default function Home() {
   return (
     <>
       <Seo />
-      <CreateRecipie />
+      <CreateCV />
     </>
   );
 }
