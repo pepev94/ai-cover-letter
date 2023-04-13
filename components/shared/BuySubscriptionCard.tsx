@@ -57,6 +57,13 @@ const proFeatures = [
   />,
 ];
 
+const freeFeatures = [
+  <FormattedMessage
+    key="freeFeature"
+    id="freeFeature"
+    defaultMessage="Recipies AI"
+  />,
+];
 const FeaturesList = ({ list }: { list: JSX.Element[] }) => {
   return (
     <Box sx={{ p: 2, mt: 4 }}>
