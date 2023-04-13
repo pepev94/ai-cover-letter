@@ -58,7 +58,11 @@ const proFeatures = [
 ];
 
 const freeFeatures = [
-  <FormattedMessage id="freeFeature" defaultMessage="Recipies AI" />,
+  <FormattedMessage
+    key="freeFeature"
+    id="freeFeature"
+    defaultMessage="Recipies AI"
+  />,
 ];
 const FeaturesList = ({ list }: { list: JSX.Element[] }) => {
   return (
