@@ -68,8 +68,8 @@ const FeaturesList = ({ list }: { list: JSX.Element[] }) => {
   return (
     <Box sx={{ p: 2, mt: 4 }}>
       <Box>
-        {list.map((feature) => (
-          <Box sx={{ display: "flex" }}>
+        {list.map((feature, i) => (
+          <Box key={i} sx={{ display: "flex" }}>
             <CheckIcon sx={{ mr: 2, color: "#80ed9d" }} />
             <Typography variant="h6" sx={{ color: "white" }} textAlign="left">
               {feature}
