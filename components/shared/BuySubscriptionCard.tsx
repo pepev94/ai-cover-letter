@@ -30,11 +30,31 @@ export const redirectToStripe = async () => {
 };
 
 const proFeatures = [
-  <FormattedMessage id="proFeature1" defaultMessage="Recipies AI" />,
-  <FormattedMessage id="proFeature2" defaultMessage="Recipies AI" />,
-  <FormattedMessage id="proFeature3" defaultMessage="Recipies AI" />,
-  <FormattedMessage id="proFeature5" defaultMessage="Recipies AI" />,
-  <FormattedMessage id="proFeature4" defaultMessage="Recipies AI" />,
+  <FormattedMessage
+    key="proFeature1"
+    id="proFeature1"
+    defaultMessage="Recipies AI"
+  />,
+  <FormattedMessage
+    key="proFeature1"
+    id="proFeature2"
+    defaultMessage="Recipies AI"
+  />,
+  <FormattedMessage
+    key="proFeature1"
+    id="proFeature3"
+    defaultMessage="Recipies AI"
+  />,
+  <FormattedMessage
+    key="proFeature1"
+    id="proFeature5"
+    defaultMessage="Recipies AI"
+  />,
+  <FormattedMessage
+    key="proFeature1"
+    id="proFeature4"
+    defaultMessage="Recipies AI"
+  />,
 ];
 
 const freeFeatures = [
