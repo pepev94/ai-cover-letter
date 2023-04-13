@@ -122,52 +122,52 @@ const CreateCV = () => {
   };
 
   const fetchData = async (body: BodyGetOpenAiResult) => {
-    if (!isAuthenticated) {
-      setOpenAuthModal(true);
-      return;
-    }
+    // if (!isAuthenticated) {
+    //   setOpenAuthModal(true);
+    //   return;
+    // }
 
     if (!validateInputs()) return;
 
     setResult("");
+    // if (!userData?.data.length) return null;
 
-    if (userData?.data.length) {
-      refetch();
-      // TODO: Refactor this
-      //@ts-ignore
-      myRef.current.scrollIntoView();
-      const response = await fetch("/api/open-ai/cv", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...body }),
-      });
+    refetch();
+    // TODO: Refactor this
+    //@ts-ignore
+    myRef.current.scrollIntoView();
+    const response = await fetch("/api/open-ai/cv", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...body }),
+    });
 
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-
-      const data = response.body;
-      if (!data) {
-        return;
-      }
-      const reader = data.getReader();
-      const decoder = new TextDecoder();
-      let done = false;
-
-      let prompt = "";
-
-      while (!done) {
-        const { value, done: doneReading } = await reader.read();
-        done = doneReading;
-        const chunkValue = decoder.decode(value);
-        setResult((prev) => prev + chunkValue);
-        prompt = prompt + chunkValue;
-      }
-      // fetchImage(prompt);
-      saveRecepie(prompt, shortLocale);
+    if (!response.ok) {
+      throw new Error(response.statusText);
     }
+
+    const data = response.body;
+    if (!data) {
+      return;
+    }
+    const reader = data.getReader();
+    const decoder = new TextDecoder();
+    let done = false;
+
+    let prompt = "";
+
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      done = doneReading;
+      const chunkValue = decoder.decode(value);
+      setResult((prev) => prev + chunkValue);
+      prompt = prompt + chunkValue;
+    }
+    // fetchImage(prompt);
+    saveRecepie(prompt, shortLocale);
+
     // fetchImage();
     setLoading(false);
   };
