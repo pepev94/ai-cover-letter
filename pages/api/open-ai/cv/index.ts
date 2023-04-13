@@ -25,14 +25,11 @@ export type MyCustomRequest = Override<
   { body: BodyGetOpenAiResult }
 >;
 
-const extra =
-  "Im a software developer with more than 7 years of experience. I am more frontennd incline, I have also founded startups in the past, and sold one named la mercaderia. I get invooved in the bussiness side to translate everything to code. I like to focus heavy on the client side instead of the code, cause I think that many software developers only focus on the code and do not understand the bussiness side of things. I am very creative.";
-
 const getPromt = (body: BodyGetOpenAiResult) => {
   const { currentCV, jobDescription, selectedLanguage } = body;
   switch (selectedLanguage) {
     case LanguagesEnum.es:
-      return `Este es mi CV: \n ${currentCV}. Quiero que me personalices mi CV a la siguiente posicion: ${jobDescription}. Escribelo en codigo LATEX:`;
+      return `Quiero que escribas la mejor carta de presentación utilizando mi CV: \n${currentCV}. La descripción del trabajo es: ${jobDescription}. Hazlo directo al punto. Toma en consideración los requisitos que se mencionan en la descripción del trabajo, haz coincidir esos requisitos con mi CV y elimina todo lo que no coincida con la descripción del trabajo.`;
     case LanguagesEnum.en:
       return `I want you to write the best cover letter using my cv: \n ${currentCV}. And the job description is: ${jobDescription}.  Make it straight to the point. Take into consideration the requirements that the job descriptions says, match them with my CV, and remove anything that doesnt match with the job descrition`;
   }
@@ -42,7 +39,7 @@ const getPromt = (body: BodyGetOpenAiResult) => {
 const getSystemCommand = ({ selectedLanguage }: BodyGetOpenAiResult) => {
   switch (selectedLanguage) {
     case LanguagesEnum.es:
-      return "Eres el mejor redactor de CV";
+      return "Eres el curador de CV. Tienes 20 años de experiencia en ayudar a las personas a conseguir trabajo haciendo un CV y una carta de presentación personalizados.";
     case LanguagesEnum.en:
       return "You are the CV curator. You have 20 years of experience in helping persons getting into job by making a Taylor made CV and Cover letter";
   }
