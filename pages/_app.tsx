@@ -44,7 +44,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-9RQ9TBFXW6"
+        src="https://www.googletagmanager.com/gtag/js?id=G-523FJV1DME"
         strategy="afterInteractive"
       />
       {/* <Script id="hot-jar" strategy="afterInteractive">
@@ -59,14 +59,14 @@ const App = ({ Component, pageProps }: AppProps) => {
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
         `}
       </Script> */}
-      {/* <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-9RQ9TBFXW6');
+          gtag('config', 'G-523FJV1DME');
         `}
-      </Script> */}
+      </Script>
       {/* <Script id="twak.to" strategy="afterInteractive">
         {`
           var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
