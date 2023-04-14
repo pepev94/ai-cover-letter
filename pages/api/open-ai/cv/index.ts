@@ -29,9 +29,9 @@ const getPromt = (body: BodyGetOpenAiResult) => {
   const { currentCV, jobDescription, selectedLanguage } = body;
   switch (selectedLanguage) {
     case LanguagesEnum.es:
-      return `Quiero que escribas la mejor carta de presentación utilizando mi CV: \n${currentCV}. La descripción del trabajo es: ${jobDescription}. Hazlo directo al punto. Toma en consideración los requisitos que se mencionan en la descripción del trabajo, haz coincidir esos requisitos con mi CV y elimina todo lo que no coincida con la descripción del trabajo.`;
+      return `Primero quiero que me des recomendaciones a mi CV para encajar mejor en la descripcion del puesto. Luego agrega ${SEPARATION_CHARACTERS}. Y finalmente quiero que escribas la mejor carta de presentación utilizando mi CV: \n${currentCV}. La descripción del trabajo es: ${jobDescription}. Hazlo directo al punto. Toma en consideración los requisitos que se mencionan en la descripción del trabajo, haz coincidir esos requisitos con mi CV y elimina todo lo que no coincida con la descripción del trabajo.`;
     case LanguagesEnum.en:
-      return `I want you to write the best cover letter using my cv: \n ${currentCV}. And the job description is: ${jobDescription}.  Make it straight to the point. Take into consideration the requirements that the job descriptions says, match them with my CV, and remove anything that doesnt match with the job descrition`;
+      return `First I want you to give recomendations on my CV to match better the job description. Then add ${SEPARATION_CHARACTERS}. I want you to write the best cover letter using my cv: \n ${currentCV}. And the job description is: ${jobDescription}.  Make it straight to the point. Take into consideration the requirements that the job descriptions says, match them with my CV, and remove anything that doesnt match with the job descrition.`;
   }
 };
 //
