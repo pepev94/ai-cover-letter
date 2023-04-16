@@ -21,10 +21,12 @@ const PageHeader = ({ title, subTitle }: Props) => {
           mt: 2,
         }}
         variant="h3"
+        //@ts-ignore
+        component="h1"
       >
         {title}
       </TypographyWithGradient>
-      <Typography variant="h5" sx={{ mt: 4, fontWeight: 700 }}>
+      <Typography component="h2" variant="h5" sx={{ mt: 4, fontWeight: 700 }}>
         {subTitle}
       </Typography>
     </>
