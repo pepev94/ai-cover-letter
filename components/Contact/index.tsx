@@ -13,7 +13,8 @@ const Contact = () => {
       }}
     >
       <Box>
-        Contact: <Link href="mailto:inaki@aifoodie.co">inaki@aifoodie.co</Link>
+        Contact:{" "}
+        <Link href="mailto:vdr.pepe94@gmail.com">vdr.pepe94@gmail.com</Link>
       </Box>
     </Box>
   );

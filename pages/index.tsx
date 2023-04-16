@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <meta
           name="google-site-verification"
-          content="5IRS4lod80OkHaQEfkyPAejW_GLUr_cY1jKlx8g2in0"
+          content="QWrYLFY4ClbZpEeLBLM4_BzguCPEmuVEhGWHzNnILe8"
         />
       </Head>
       <Seo />

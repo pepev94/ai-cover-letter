@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.20.13",
+    "@contentful/rich-text-react-renderer": "^15.16.3",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.11.0",
@@ -29,6 +30,7 @@
     "api-query-params": "^5.4.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "colord": "^2.9.3",
+    "contentful": "^10.1.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "eventsource-parser": "^0.1.0",

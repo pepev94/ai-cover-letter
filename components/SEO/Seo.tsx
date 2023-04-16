@@ -6,7 +6,7 @@ const DEFAULT_OG_IMAGE =
 
 export default function Seo({
   title = "AI Cover Letter Generator",
-  description = "Description: Use our AI cover letter generator to effortlessly create professional cover letters tailored to your needs. Our AI technology creates personalized cover letters that help you stand out in the job market. Try our AI cover letter generator today at aicoverlettergenerator.co.",
+  description = "Use our AI cover letter generator to effortlessly create professional cover letters tailored to your needs. Our AI technology creates personalized cover letters that help you stand out in the job market. Try our AI cover letter generator today at aicoverlettergenerator.co.",
   siteName = "AI Cover Letter Generator",
   canonical = DOMAIN,
   ogImage = DEFAULT_OG_IMAGE,
