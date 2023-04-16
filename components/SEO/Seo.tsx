@@ -5,7 +5,7 @@ const DEFAULT_OG_IMAGE =
   "https://aifoodie.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FlogoRojo.6071538e.png&w=100&q=75";
 
 export default function Seo({
-  title = "AI Cover Letter Generator | Create Professional Cover Letters with AI",
+  title = "AI Cover Letter Generator",
   description = "Description: Use our AI cover letter generator to effortlessly create professional cover letters tailored to your needs. Our AI technology creates personalized cover letters that help you stand out in the job market. Try our AI cover letter generator today at aicoverlettergenerator.co.",
   siteName = "AI Cover Letter Generator",
   canonical = DOMAIN,
