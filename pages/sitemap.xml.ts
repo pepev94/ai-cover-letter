@@ -1,20 +1,20 @@
 import getBlogPosts from "@/utils/contentful";
 
 //pages/sitemap.xml.js
-const BASE_DOMAIN = "https://www.aicoverlettergenerator.com";
+const BASE_URL = "https://wwww.aicoverlettergenerator.co";
 
 function generateSiteMap(posts: string[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
      <url>
-       <loc>/</loc>
+       <loc>${BASE_URL}</loc>
      </url>
      ${posts
        .map((slug) => {
          return `
        <url>
-           <loc>${`/blog/${slug}`}</loc>
+           <loc>${`${BASE_URL}/blog/${slug}`}</loc>
        </url>
      `;
        })
