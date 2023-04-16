@@ -67,6 +67,13 @@ const App = ({ Component, pageProps }: AppProps) => {
           gtag('config', 'G-523FJV1DME');
         `}
       </Script>
+      <Script
+        id="Adsense-id"
+        data-ad-client="ca-pub-4371440587772222"
+        async
+        strategy="beforeInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
       {/* <Script id="twak.to" strategy="afterInteractive">
         {`
           var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
