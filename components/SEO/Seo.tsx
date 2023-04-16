@@ -1,13 +1,13 @@
 import Head from "next/head";
 
-const DOMAIN = "http://aifoodie.co/";
+const DOMAIN = "http://aicoverlettergenerator.co";
 const DEFAULT_OG_IMAGE =
   "https://aifoodie.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FlogoRojo.6071538e.png&w=100&q=75";
 
 export default function Seo({
-  title = "Create Personalized CV powered by AI",
-  description = "Get hired faster",
-  siteName = "AI CV",
+  title = "AI Cover Letter Generator | Create Professional Cover Letters with AI",
+  description = "Description: Use our AI cover letter generator to effortlessly create professional cover letters tailored to your needs. Our AI technology creates personalized cover letters that help you stand out in the job market. Try our AI cover letter generator today at aicoverlettergenerator.co.",
+  siteName = "AI Cover Letter Generator",
   canonical = DOMAIN,
   ogImage = DEFAULT_OG_IMAGE,
   ogType = "website",
