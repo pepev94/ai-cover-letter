@@ -5,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Seo from "@/components/SEO/Seo";
 import { BLOCKS } from "@contentful/rich-text-types";
 
+//@ts-ignore
 const Text = ({ children }) => (
   <Typography variant="body1" sx={{ whiteSpace: "pre-line", mt: 2 }}>
     {children}
@@ -13,6 +14,7 @@ const Text = ({ children }) => (
 
 const renderOptions = {
   renderNode: {
+    //@ts-ignore
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
   },
 };
