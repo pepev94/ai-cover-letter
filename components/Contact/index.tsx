@@ -13,8 +13,8 @@ const Contact = () => {
       }}
     >
       <Box>
-        Contact:{" "}
-        <Link href="mailto:vdr.pepe94@gmail.com">vdr.pepe94@gmail.com</Link>
+        {/* Contact:{" "}
+        <Link href="mailto:vdr.pepe94@gmail.com">vdr.pepe94@gmail.com</Link> */}
       </Box>
     </Box>
   );
