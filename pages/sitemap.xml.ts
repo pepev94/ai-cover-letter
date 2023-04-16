@@ -8,13 +8,13 @@ function generateSiteMap(posts: string[]) {
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
      <url>
-       <loc>https://www.aicoverlettergenerator.com</loc>
+       <loc>/</loc>
      </url>
      ${posts
        .map((slug) => {
          return `
        <url>
-           <loc>${`${BASE_DOMAIN}/blog/${slug}`}</loc>
+           <loc>${`/blog/${slug}`}</loc>
        </url>
      `;
        })
