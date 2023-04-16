@@ -211,83 +211,84 @@ const CreateCV = () => {
           title={<FormattedMessage id="title" defaultMessage="Recipies AI" />}
           subTitle={<FormattedMessage id="subtitle" defaultMessage=" AI" />}
         />
-        {session?.status === "loading" ? (
-          <LoadingScreen />
-        ) : (
-          <>
-            <Dialog
-              open={openAuthModal}
-              onClose={() => setOpenAuthModal(false)}
-              aria-labelledby="modal-sign-in"
-              aria-describedby="modal-sign-in"
+
+        <Dialog
+          open={openAuthModal}
+          onClose={() => setOpenAuthModal(false)}
+          aria-labelledby="modal-sign-in"
+          aria-describedby="modal-sign-in"
+        >
+          <LoginCta
+            callbackUrl={`/?jobDescription=${jobDescription}&currentCV=${currentCV}`}
+          />
+        </Dialog>
+        <Box sx={{ my: 4, width: "100%" }}>
+          <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
+            <FormattedMessage id="step1" defaultMessage="Recipies AI" />
+          </Typography>
+          <TextField
+            sx={{ width: "100%" }}
+            onChange={(e) => setCurrentCV(e.target.value)}
+            id="outlined-basic"
+            rows={20}
+            multiline
+            label="CV"
+            variant="outlined"
+          />
+        </Box>
+
+        <Box sx={{ my: 4, width: "100%" }}>
+          <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
+            <FormattedMessage id="step2" defaultMessage="Recipies AI" />
+          </Typography>
+          <TextField
+            sx={{ width: "100%" }}
+            rows={20}
+            multiline
+            onChange={(e) => setJobDescription(e.target.value)}
+            id="outlined-basic"
+            label="Description"
+            variant="outlined"
+          />
+        </Box>
+
+        <Box>
+          {session?.status === "loading" ? (
+            <LoadingScreen />
+          ) : (
+            <LoadingButton
+              sx={{ mt: 5, width: "100%" }}
+              onClick={() =>
+                fetchData({
+                  currentCV,
+                  jobDescription,
+                  selectedLanguage: getLanguage(shortLocale),
+                })
+              }
+              disabled={loading}
+              loading={loading}
+              size="large"
+              fullWidth
+              variant="contained"
             >
-              <LoginCta
-                callbackUrl={`/?jobDescription=${jobDescription}&currentCV=${currentCV}`}
-              />
-            </Dialog>
-            <Box sx={{ my: 4, width: "100%" }}>
-              <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
-                <FormattedMessage id="step1" defaultMessage="Recipies AI" />
-              </Typography>
-              <TextField
-                sx={{ width: "100%" }}
-                onChange={(e) => setCurrentCV(e.target.value)}
-                id="outlined-basic"
-                rows={20}
-                multiline
-                label="CV"
-                variant="outlined"
-              />
-            </Box>
-
-            <Box sx={{ my: 4, width: "100%" }}>
-              <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
-                <FormattedMessage id="step2" defaultMessage="Recipies AI" />
-              </Typography>
-              <TextField
-                sx={{ width: "100%" }}
-                rows={20}
-                multiline
-                onChange={(e) => setJobDescription(e.target.value)}
-                id="outlined-basic"
-                label="Description"
-                variant="outlined"
-              />
-            </Box>
-
-            <Box>
-              <LoadingButton
-                sx={{ mt: 5, width: "100%" }}
-                onClick={() =>
-                  fetchData({
-                    currentCV,
-                    jobDescription,
-                    selectedLanguage: getLanguage(shortLocale),
-                  })
-                }
-                disabled={loading}
-                loading={loading}
-                size="large"
-                fullWidth
-                variant="contained"
-              >
+              <Typography component="h4">
                 <FormattedMessage id="generateCV" />
-              </LoadingButton>
-
-              <Typography
-                ref={myRef}
-                sx={{
-                  whiteSpace: "pre-line",
-                  textAlign: "left",
-                  mt: 2,
-                  maxWidth: "600px",
-                }}
-              >
-                {result}
               </Typography>
-            </Box>
-          </>
-        )}
+            </LoadingButton>
+          )}
+
+          <Typography
+            ref={myRef}
+            sx={{
+              whiteSpace: "pre-line",
+              textAlign: "left",
+              mt: 2,
+              maxWidth: "600px",
+            }}
+          >
+            {result}
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
